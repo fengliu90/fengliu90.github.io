@@ -22,85 +22,160 @@
 </td>
 <td id="layout-content">
 
-    <h1 style="margin-top: 0em">Research Focus</h1>
+    <h1 style="margin-top: 0em">Research Focus - Core ML</h1>
 	
     <!-- <p>[ <a href="#services">Professional Services</a>,
         <a href="#talks">Academic Talks</a>,
         <a href="#awards">Honors and Awards</a> ]</p>-->
-    As we deploy many AI systems in the real world, the reliability and safety of these systems are crucial. To cope with possible risks brought by these systems, we focus on investigating trustworthy machine learning. At the current stage, we try to understand and handle the trustworthiness in current AI-related systems via developing advanced statistical tools and metrics. Compared to the classical statistical tools, we are developing a series of data-adaptive statistical tools where the statistics used are adaptive instead of static, like previous ones. Based on these new tools, we hope to significantly improve the trade-off between utility and certified/provable trustworthiness.
+    As we deploy many AI systems in the real world, the reliability and safety of these systems are crucial. To cope with possible risks brought by these systems, we focus on investigating trustworthy machine learning. At the current stage, we try to understand and handle the trustworthiness in current AI-related systems via developing advanced statistical tools and metrics. Compared to the classical statistical tools, we are developing a series of data-adaptive statistical tools where the statistics used are adaptive instead of static, like previous ones. Based on these new tools, we hope to significantly improve the trade-off between utility and certified/provable trustworthiness.<br><br>
 
-    <b>statistical hypothesis testing</b> as statistical foundations and <b>trustworthy machine learning algorithms</b> as practical solutions (certified/provable). The former one provides fundamental tools for constructing trustworthy machine learning systems, and the latter focuses on addressing concrete risks of some existing machine learning algorithms.
+    Specifically, current core-machine-learning research directions include <b>data-adaptive statistical hypothesis testing</b> (as a basis for theoretical/statistical guarantees), <b>misinformation detection/defense</b>, <b>privacy and copyright protection in AI systems</b>, and <b>efficient post-training paradigm</b> on pre-trained vision models, vision-language models, and large-language models. Detailed topics are as follows. <br><br>
+
+    <font color="green">(I am also keen to use the reliable AI tools to address science problems, please see them scrolling down on this page.)</font>
+
     <div>
-        <h2><hr><a name="testing"></a>Statistical Hypothesis Testing</h2>
+        <h2><hr><a name="testing"></a>Data-adaptive Statistical Hypothesis Testing</h2>
         In statistical hypothesis testing, we aim to verify if the data at hand sufficiently support a particular hypothesis. For example, testing if two datasets are drawn from the same distribution (i.e., the two-sample testing); testing if data are drawn from a given distribution (i.e., the goodness-of-fit testing); and testing if two datasets are independent (i.e., the independence testing). </br></br>
         
         The statistics used in testing methods or testing methods themselves are widely used in the field of machine learning, such as transfer learning, generative models, and causal discovery. This research line focuses on discovering more powerful statistics and testing methods for the field. Specifically, we focus on deep-kernel-based hypothesis testing methods in the following areas [<a href="https://arxiv.org/pdf/2002.09116.pdf" target="_blank">ICML 2020</a>]
             [<a href="https://arxiv.org/pdf/2010.11415.pdf" target="_blank">ICML 2021</a>]
             [<a href="https://arxiv.org/pdf/2106.07636.pdf" target="_blank">NeurIPS 2021</a>]
             [<a href="https://arxiv.org/pdf/2202.03077.pdf" target="_blank">ICML 2022</a>]
-            [<a href="https://arxiv.org/pdf/2412.00613" target="_blank">arXiv 2024</a>]
             [<a href="https://arxiv.org/pdf/2409.06890" target="_blank">arXiv 2024</a>]
-            [<a href="https://openreview.net/pdf?id=z9j7wctoGV" target="_blank">ICLR 2025</a>]. </br></br>
+            [<a href="https://openreview.net/pdf?id=z9j7wctoGV" target="_blank">ICLR 2025</a>]
+            [<a href="https://arxiv.org/pdf/2412.00613" target="_blank">UAI 2025</a>]. </br></br>
         <ul>
 		<li><p>Two-sample Testing: Testing if two datasets are drawn from the same distribution.</p></li>
-        <li><p>Goodness-of-fit Testing: Testing if data are drawn from a given distribution. </p></li>
-        <li><p>Independence Testing: Testing if two datasets are independent.</p></li>
+        <li><p>(Conditional) Independence Testing: Testing if two datasets are independent (on conditions).</p></li>
+        <li><p>Distributional Closeness Testing: Testing if two datasets are statistically close to each other, given a pre-defined discrepancy.</p></li>
         </ul></br>
-    Close Collaborators: <a href="https://www.stats.ox.ac.uk/~wxu/" target="_blank">Dr. Wenkai Xu@Oxford</a>, <a href="https://djsutherland.ml/" target="_blank">Dr. Danica J. Sutherland@UBC</a>, and
-    <a href="https://www.gatsby.ucl.ac.uk/~gretton/" target="_blank">Prof. Arthur Gretton@UCL-Gatsby</a>
+    Close Collaborators: <a href="https://djsutherland.ml/" target="_blank">Dr Danica J. Sutherland@UBC</a>, <a href="https://sites.google.com/view/liuhua-peng" target="_blank">Dr Liuhua Peng@UoM</a>, 
+    <a href="https://www.gatsby.ucl.ac.uk/~gretton/" target="_blank">Prof Arthur Gretton@UCL-Gatsby</a>, and <a href="https://www.stats.ox.ac.uk/~wxu/" target="_blank">Dr Wenkai Xu@Oxford</a>
         
     </div>
 
     <div>
-        <h2><hr><a name="tml"></a>Trustworthy Machine Learning Algorithms</h2>
-        At the current stage, we mainly focus on four specific tasks to make machine learning algorithms more reliable and safe.
+        <h2><hr><a name="tml"></a>Misinformation Detection and Defense</h2>
+        Misinformation generally refers to information that is not correct or can mislead users living in an AI-related environment. Thus, it is important to detect such information or make the AI-related activities robust to such information.
         
+        <h3>AI-generated Data Detection</h3>
+        
+        AI-generated content (text/images) can mislead users and erode trust when used for spam, plagiarism, or influence. We build statistically principled detectors that remain reliable under distribution shift. We focus on the following two topics [<a href="https://openreview.net/pdf?id=z9j7wctoGV" target="_blank">ICLR 2025</a>].</br></br>
+        <ul>
+            <li><p>Kernel relative tests for machine-generated text detection (deep-kernel hypothesis testing), suitable for scenarios where we cannot control how to generate them.</p></li>
+            <li><p>Watermarking for machine-generated text detection, suitable for scenarios where we can control how to generate them.</p></li>
+        </ul>
+
         <h3>Defending against Adversarial Attacks</h3>
         
-        Deep neural networks are susceptible to adversarial examples that are generated by changing natural inputs with malicious perturbation. Those examples are imperceptible to human eyes but can fool deep models to make wrong predictions with high confidence. Thus, to make deep neural networks more reliable, we focus on the following two topics [<a href="https://arxiv.org/pdf/2010.11415.pdf" target="_blank">ICML 2021</a>] [<a href="https://arxiv.org/pdf/2106.07904" target="_blank">NeurIPS 2021</a>] [<a href="https://arxiv.org/pdf/2202.03077.pdf" target="_blank">ICML 2022</a>] [<a href="https://arxiv.org/pdf/2202.03077.pdf" target="_blank">ICML 2022</a>] [<a href="https://arxiv.org/pdf/2305.16035.pdf" target="_blank">ICML 2023</a>].</br></br>
+        Deep neural networks are susceptible to adversarial examples that are generated by changing natural inputs with malicious perturbation. Those examples are imperceptible to human eyes but can fool deep models to make wrong predictions with high confidence. Thus, to make deep neural networks more reliable, we focus on the following two topics [<a href="https://arxiv.org/pdf/2010.11415.pdf" target="_blank">ICML 2021</a>] [<a href="https://arxiv.org/pdf/2106.07904" target="_blank">NeurIPS 2021</a>] [<a href="https://arxiv.org/pdf/2202.03077.pdf" target="_blank">ICML 2022</a>] [<a href="https://arxiv.org/pdf/2202.03077.pdf" target="_blank">ICML 2022</a>] [<a href="https://arxiv.org/pdf/2305.16035.pdf" target="_blank">ICML 2023</a>] [<a href="https://arxiv.org/pdf/2406.00685" target="_blank">ICML 2024</a>] [<a href="https://arxiv.org/pdf/2503.02169" target="_blank">ICML 2025</a>] [<a href="https://arxiv.org/pdf/2506.06027" target="_blank">ICML 2025</a>].</br></br>
         <ul>
             <li><p>Detecting adversarial attacks (i.e., adversarial attack detection). </p></li>
             <li><p>Training a robust model against future adversarial attacks (i.e., adversarial training).</p></li>
+            <li><p>Purifying inputs, making them reliable for the well-trained models (i.e., adversarial purification).</p></li>
         </ul></br>
         
-        Close Collaborators: <a href="https://zjfheart.github.io/" target="_blank">Dr. Jingfeng Zhang@RIKEN-AIP</a>, <a href="https://bhanml.github.io/" target="_blank">Dr. Bo Han@HKBU</a>, <a href="https://tongliang-liu.github.io/" target="_blank">Dr. Tongliang Liu@USYD</a>, <a href="https://niug1984.github.io/" target="_blank">Dr. Gang Niu@RIKEN-AIP</a>, and <a href="http://www.ms.k.u-tokyo.ac.jp/sugi/index.html" target="_blank">Prof. Masashi Sugiyama@UTokyo</a>
+        Close Collaborators: <a href="https://zjfheart.github.io/" target="_blank">Dr Jingfeng Zhang@RIKEN-AIP</a>, <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a>, <a href="https://tongliang-liu.github.io/" target="_blank">A/Prof Tongliang Liu@USYD</a>, <a href="https://niug1984.github.io/" target="_blank">Dr Gang Niu@RIKEN-AIP</a>, and <a href="http://www.ms.k.u-tokyo.ac.jp/sugi/index.html" target="_blank">Prof Masashi Sugiyama@UTokyo</a>
         
         
         <h3>Being Aware of Out-of-distribution/Open-set Data</h3>
         
-        The success of supervised learning is established on an implicit assumption that training and test data share the same distribution (especially share the same label set), i.e., the in-distribution (ID) assumption. However, test data distribution in many real-world scenarios may violate the assumption and, instead, contain out-of-distribution (OOD) data whose label set is different from ID data. Given a well-trained ID classifier, if this classifier classifies OOD data as ID classes, we might face serious accidents when deploying the classifier into real-world scenarios. To mitigate the risk of OOD data, we focus on the following topics [<a href="https://arxiv.org/pdf/2106.15792.pdf" target="_blank">ICML 2021</a>] [<a href="https://arxiv.org/pdf/2210.14707.pdf" target="_blank">NeurIPS2022a (Outstanding Paper)</a>] [<a href="https://arxiv.org/pdf/2210.15198.pdf" target="_blank">NeurIPS2022b (Spotlight)</a>] [<a href="https://arxiv.org/pdf/2303.05033.pdf" target="_blank">ICLR2023</a>] [<a href="https://openreview.net/pdf?id=charggEv8v" target="_blank">ICML2023</a>].</br></br>
+        The success of supervised learning is established on an implicit assumption that training and test data share the same distribution (especially share the same label set), i.e., the in-distribution (ID) assumption. However, test data distribution in many real-world scenarios may violate the assumption and, instead, contain out-of-distribution (OOD) data whose label set is different from ID data. Given a well-trained ID classifier, if this classifier classifies OOD data as ID classes, we might face serious accidents when deploying the classifier into real-world scenarios. To mitigate the risk of OOD data, we focus on the following topics [<a href="https://arxiv.org/pdf/2106.15792.pdf" target="_blank">ICML 2021</a>] [<a href="https://arxiv.org/pdf/2210.14707.pdf" target="_blank">NeurIPS 2022  (Outstanding Paper)</a>] [<a href="https://arxiv.org/pdf/2210.15198.pdf" target="_blank">NeurIPS 2022 (Spotlight)</a>] [<a href="https://arxiv.org/pdf/2303.05033.pdf" target="_blank">ICLR 2023</a>] [<a href="https://openreview.net/pdf?id=charggEv8v" target="_blank">ICML 2023</a>] [<a href="https://arxiv.org/pdf/2403.20078.pdf" target="_blank">ICLR 2024 (Spotlight)</a>] [<a href="https://arxiv.org/pdf/2410.23883" target="_blank">ACL 2025</a>].</br></br>
         
         <ul>
             <li><p>Detecting out-of-distribution data. </p></li>
             <li><p>Training a robust model in the open world (e.g., open-set learning, out-of-distribution generalization).</p></li>
         </ul></br>
         
-        Close Collaborators: <a href="https://fang-zhen.github.io/index.html" target="_blank">Dr. Zhen Fang@UTS</a>, <a href="https://bhanml.github.io/" target="_blank">Dr. Bo Han@HKBU</a>, and <a href="https://tongliang-liu.github.io/" target="_blank">Dr. Tongliang Liu@USYD</a>
-        
-        <h3>Learning/Inference under Distribution Shift (a.k.a., Transfer Learning)</h3>
-        
-        Test data are not perfect (e.g., only few data are available) and might have different distribution from the training data. To complete the task on such imperfect test data (or the target domain), we want to leverage the knowledge from domains with abundant labels (i.e., source domains)/pre-trained models (i.e., source models) to complete classification/clustering tasks in an unlabeled domain (i.e., target domain), where two domains are different but related. Specifically, we focus on the following topics [<a href="https://www.skillsworkshop.ai/uploads/1/2/1/5/121527312/butterfly.pdf" target="_blank">NeurIPS 2019</a>] [<a href="https://arxiv.org/pdf/2007.14612.pdf" target="_blank">IJCAI 2020</a>] [<a href="https://arxiv.org/pdf/2101.01104.pdf" target="_blank">AAAI 2021</a>] [<a href="https://arxiv.org/pdf/2106.06326.pdf" target="_blank">NeurIPS 2021 (Spotlight)</a>] [<a href="https://arxiv.org/pdf/2102.04002.pdf" target="_blank">ICLR 2022 (Spotlight)</a>] [<a href="https://openreview.net/pdf?id=PJzjHAnoVp" target="_blank">ICML 2023</a>].</br></br>
+        Close Collaborators: <a href="https://fang-zhen.github.io/index.html" target="_blank">Dr Zhen Fang@UTS</a>, <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a>, <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank">A/Prof Sharon Yixuan Li@UW-Madison</a>, and <a href="https://tongliang-liu.github.io/" target="_blank">A/Prof Tongliang Liu@USYD</a>
+    </div>
+    <div>
+        <h2><hr><a name="tml"></a>Privacy and Copyright Protection in AI Systems</h2>
 
+        When we talk about AI-related models (classifiers or generative models), we cannot ignore the fact that these models are trained with some data that perhaps contains some sensitive/private information, which will pose a challenge to protecting the privacy and copyright of data. Without effective/provable tools to detect the illegal use of data/models, it is impossible to regulate the development of AI techniques.
+
+        <h3>Protecting Data/Model's Copyright in GenAI</h3>
+        
+        GenAI raises urgent questions about provenance, copyright, and the right to be forgotten. We study verifiable tracing and removal mechanisms to protect creators and users. We focus on the following two topics [<a href="https://arxiv.org/pdf/2502.02970" target="_blank">ICML 2025 R2-FM Workshop</a>] [<a href="https://arxiv.org/pdf/2503.09117" target="_blank">ICML 2025</a>].</br></br>
         <ul>
-            <li><p>Domain adaptation with imperfect data.</p></li>
-            <li><p>Hypothesis adaptation/transfer.</p></li>
-            <li><p>Novel Class Discovery.</p></li>
+            <li><p>Data/Model's copyright provenance and misuse tracing.</p></li>
+            <li><p>Unlearning for LLMs to remove copyrighted or sensitive data while preserving utility.</p></li>
         </ul></br>
-        
-        Close Collaborators: <a href="https://zhunzhong.site/" target="_blank">Dr. Zhun Zhong@UniTN</a>, <a href="https://fang-zhen.github.io/index.html" target="_blank">Dr. Zhen Fang@UTS</a>, <a href="https://bhanml.github.io/" target="_blank">Dr. Bo Han@HKBU</a>, <a href="https://tongliang-liu.github.io/" target="_blank">Dr. Tongliang Liu@USYD</a>, <a href="https://niug1984.github.io/" target="_blank">Dr. Gang Niu@RIKEN-AIP</a>, and <a href="http://www.ms.k.u-tokyo.ac.jp/sugi/index.html" target="_blank">Prof. Masashi Sugiyama@UTokyo</a>
-        
+
+        Close Collaborators: <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a> and <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank">A/Prof Sharon Yixuan Li@UW-Madison</a>
+
         <h3>Protecting Data Privacy</h3>
         
-        With the development of machine learning (ML) algorithms, deep neural networks (DNNs) are increasingly adopted in various privacy-sensitive applications, such as facial recognition, medical diagnoses, and intelligent virtual assistants. Since training DNNs could involve processing sensitive and proprietary datasets in privacy-related applications, there are great concerns about privacy leakage. To protect the privacy of individuals whose personal information is used during the training, enterprises typically release only well-trained DNNs through ML-as-a-services platforms, wherein users can download pre-trained models (e.g., Pytorch Hub) or query the model via some sort of programming or user interfaces (e.g., Amazon Recognition), which are referred to as white-box access and black-box access, respectively. However, a pre-trained model can still be used to restore the orginal training data. To prevent the data-leakage issue of pre-trained models, we focus on the following topics [<a href="https://arxiv.org/pdf/2206.05483.pdf" target="_blank">KDD 2022</a>].</br></br>
+        With the development of machine learning (ML) algorithms, deep neural networks (DNNs) are increasingly adopted in various privacy-sensitive applications, such as facial recognition, medical diagnoses, and intelligent virtual assistants. Since training DNNs could involve processing sensitive and proprietary datasets in privacy-related applications, there are great concerns about privacy leakage. To protect the privacy of individuals whose personal information is used during the training, enterprises typically release only well-trained DNNs through ML-as-a-services platforms, wherein users can download pre-trained models (e.g., Pytorch Hub) or query the model via some sort of programming or user interfaces (e.g., Amazon Recognition), which are referred to as white-box access and black-box access, respectively. However, a pre-trained model can still be used to restore the orginal training data. To prevent the data-leakage issue of pre-trained models, we focus on the following topics [<a href="https://arxiv.org/pdf/2206.05483.pdf" target="_blank">KDD 2022</a>] [<a href="https://openreview.net/forum?id=pyqPUf36D2&noteId=R0SvAR2yoT" target="_blank">NeurIPS 2024</a>] [<a href="https://csdl-downloads.ieeecomputer.org/trans/tp/2025/08/10949821.pdf?Expires=1756804708&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jc2RsLWRvd25sb2Fkcy5pZWVlY29tcHV0ZXIub3JnL3RyYW5zL3RwLzIwMjUvMDgvMTA5NDk4MjEucGRmIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzU2ODA0NzA4fX19XX0_&Signature=ImwAhu7cbLqReX5muQDUbyo7THFfmtB85PgOvsTR8AWF-JVVdwk6j1Z1lPKqRk6eEBY490e5FhlAeS0OUNq14gJVeKGYpFwgdDE-NVyzwbbjTke4cKJexHHhxMju-O56Bw9TFjNa6wjAu0f2JtryHa5qVPhPw7NTTHl78Xlvwc~jnXrSdd6HoP7jmZqr3mxeP7FaKtGWG9WHV3u7a~Xf52KMSr9qovn3mNLJm0rdkkkATkkBKPUy42mg5HHbk2izoC9IZMlotEpRN6OuvZrazxH-d3hP8a96pgucNlndyd6H1PXgLzrJdmS5cOmvcVotF1t0IbH7Sr9PoELnuHMUQA__&Key-Pair-Id=K12PMWTCQBDMDT" target="_blank">TPAMI 2025</a>].</br></br>
 
         <ul>
             <li><p>Evaluation of Model-inversion Risks.</p></li>
             <li><p>Defending against Model-inversion Attacks.</p></li>
         </ul></br>
 
-        Close Collaborators: <a href="https://zjfheart.github.io/" target="_blank">Dr. Jingfeng Zhang@RIKEN-AIP</a>, <a href="https://bhanml.github.io/" target="_blank">Dr. Bo Han@HKBU</a>, and <a href="https://tongliang-liu.github.io/" target="_blank">Dr. Tongliang Liu@USYD</a>
+        Close Collaborators: <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a>, <a href="https://zjfheart.github.io/" target="_blank">Dr Jingfeng Zhang@RIKEN-AIP</a>, and <a href="https://mingyuanzhou.github.io/" target="_blank">A/Prof Mingyuan Zhou@UT Austin</a>
+    </div>
+    <div>
+        <h2><hr><a name="tml"></a>Efficient Post-training</h2>
+
+        When a pre-trained model (vision model, vision-language model, large-language model) is available (white-box or black-box), how could we efficiently post-train or finetune it to our downstream tasks?
+
+        <h3>Parameter-efficient Post-training/Finetuning</h3>
+        
+        We design light-weight adaptation that adds minimal parameters while maintaining stability across tasks. We focus on the following topics.</br></br>
+        <ul>
+            <li><p>Model reprogramming, post-train/finetune a pre-trained model via <b>optimizing in input space</b>. [<a href="https://arxiv.org/pdf/2406.03150" target="_blank">ICML 2024 (Spotlight)</a>] [<a href="https://arxiv.org/pdf/2410.24018" target="_blank">NeurIPS 2024 (Oral)</a>] [<a href="https://arxiv.org/pdf/2501.13982" target="_blank">ICLR 2025</a>] [<a href="https://arxiv.org/pdf/2506.01000" target="_blank">ICML 2025</a>]</p></li>
+            <li><p>Prompt learning and low-rank adaptation, post-train/finetune a pre-trained model via <b>optimizing in input space and hidden parameter space</b>. [<a href="https://arxiv.org/pdf/2406.10502" target="_blank">ICML 2024 (Oral)</a>] [<a href="https://openreview.net/attachment?id=6udKBHc0Mr&name=pdf" target="_blank">ICML 2025</a>] [<a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Pan_NLPrompt_Noise-Label_Prompt_Learning_for_Vision-Language_Models_CVPR_2025_paper.pdf" target="_blank">CVPR 2025 (Highlight)</a>]</p></li>
+            <li><p>Cross-domain few-shot finetuning, post-train/finetune a pre-trained model via <b>optimizing in output/logit space</b>. [<a href="https://www.arxiv.org/pdf/2405.18786" target="_blank">ICML 2024</a>] [<a href="https://arxiv.org/pdf/2410.12474" target="_blank">NeurIPS 2024</a>] </p></li>
+            <li><p>Model merging, post-train/finetune a pre-trained model via <b>merging models' weights</b>. [<a href="https://arxiv.org/pdf/2506.13406" target="_blank">ICML 2025</a>]</p></li>
+        </ul>
+
+        Close Collaborators: <a href="https://lfeng1995.github.io/" target="_blank">Lei Feng@NTU</a>, <a href="https://jianzhongqi.github.io/" target="_blank">A/Prof Jianzhong Qi@UoM</a>, and <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a>
+
+        <h3>Efficient Black-box Post-training/Finetuning</h3>
+        
+        When model weights are inaccessible, we adapt capabilities via input-space prompting and reprogramming. We focus on the following two topics.</br></br>
+        <ul>
+            <li><p>Prompt ensembling, to automatically ensemble prompts in a given pool, inference-only optimization.</p></li>
+            <li><p>Black-box visual reprogramming for CLIP and other VLMs.</p></li>
+        </ul>
+
+        Close Collaborators: <a href="https://bhanml.github.io/" target="_blank">A/Prof Bo Han@HKBU</a>, <a href="https://tongliang-liu.github.io/" target="_blank">A/Prof Tongliang Liu@USYD</a>, <a href="https://niug1984.github.io/" target="_blank">Dr Gang Niu@RIKEN-AIP</a>, and <a href="http://www.ms.k.u-tokyo.ac.jp/sugi/index.html" target="_blank">Prof Masashi Sugiyama@UTokyo</a>
+
+        <h3>Weak-to-strong Generalization</h3>
+        
+        Understand how human can teach the future superintelligence, making it follow our guidance. Weak-to-strong methods are ways to mimic this scenario. [<a href="https://openreview.net/pdf?id=FwkYeLovHk" target="_blank">TMLR 2025</a>]</br></br>
+
+        Close Collaborators: <a href="https://people.eng.unimelb.edu.au/smonazam/" target="_blank">A/Prof Sarah Erfani@UoM</a> and <a href="https://people.eng.unimelb.edu.au/baileyj/" target="_blank">Prof James Bailey@UoM</a>
     </div>
 
+    <h1 style="margin-top: 0em"><hr><hr>Research Focus - AI for Science</h1>
+
+    Scientific discovery increasingly depends on our ability to extract knowledge from vast, complex, and often noisy data. While AI has shown remarkable promise in accelerating breakthroughs across domains such as physics, biology, and climate science, its widespread adoption in scientific research remains constrained by reliability concerns—ranging from reproducibility and robustness to fairness and interpretability. I am motivated to pursue research on AI for Science because I believe that building <b>reliable AI tools</b> is the key to unlocking trustworthy insights, enabling collaboration between human expertise and machine intelligence, and ensuring that AI-driven discoveries are not only innovative but also verifiable and impactful. By advancing methodologies that prioritize reliability, we can transform AI from a promising assistant into a dependable partner in tackling the world’s most pressing scientific challenges.<br><br>
+
+    Specifically, current research directions include <b>AI for Meteorology</b> and <b>AI for Medical Diagnosis</b>.
+
+    <div>
+        <h2><hr><a name="testing"></a>AI for Meteorology</h2>
+        Meteorology plays a critical role in safeguarding lives, guiding agriculture, and supporting climate resilience, yet numerical weather prediction (NWP) models often suffer from systematic biases and limited resolution. With the increasing frequency of extreme weather events under climate change, improving forecast accuracy has never been more urgent. My research focuses on developing AI tools to correct and enhance forecasts generated by NWP models, enabling more reliable and fine-grained predictions. Specifically, current research directions are as follows.</br></br>
+        <ul>
+        <li><p>Madden-Julian Oscillation (MJO) Prediction: A planetary-scale tropical convective system, serves as a primary source of global subseasonal (i.e., targeting three to four weeks) predictability.</p></li>
+        <li><p>Statistical Uncertainty Measurement for Weather Prediction: Measuring the prediction uncertainty when multiple NWP predictions are available.</p></li>
+        </ul>
+    Close Collaborators: <a href="https://people.csiro.au/K/V/Vassili-Kitsios" target="_blank">Dr Vassili Kitsios@CSIRO</a> and <a href="https://scholar.google.com/citations?user=lbaTUJ0AAAAJ" target="_blank">Dr Jing Zhao@CAS</a>
+        
+    </div>
+
+    <div>
+        <h2><hr><a name="testing"></a>AI for Medical Diagnosis</h2>
+        Medical diagnosis is one of the most impactful and high-stakes applications of artificial intelligence. With the growing availability of medical imaging, genomic, and electronic health record data, AI has the potential to assist clinicians in detecting diseases earlier, personalizing treatment decisions, and reducing diagnostic errors. Unlike traditional diagnostic tools, AI systems can learn subtle and complex patterns across diverse data modalities, enabling insights that may be beyond human perception. My current research interests are mainly as follows</br></br>
+        <ul>
+        <li><p>Mitigating Batch Effects: Reliably mitigate the batch effects happening in the AI-related tools using trasfer learning or invariant adaptation.</p></li>
+        <li><p>Training/Finetuning a model using a few data: Have a AI-related model with only limited data. [<a href="https://www.nature.com/articles/s41467-022-35296-0" target="_blank">Nature Communications 2022</a>] [<a href="https://www.nature.com/articles/s41467-024-46413-6" target="_blank">Nature Communications 2024</a>] </p></li>
+        </ul>
+    Close Collaborators: <a href="https://www.yang-lab.com/show-11-278-1.html" target="_blank">A/Prof Jia Song@STJU</a>
+        
+    </div>
 </td>
 </tr>
 </table>
