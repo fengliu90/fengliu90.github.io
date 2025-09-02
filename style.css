@@ -45,6 +45,11 @@ body {
 	margin-left: 0.5em;
 }
 
+.section-divider {
+  margin: 2em 0;
+  border-top: 3px dashed #bdc3c7;
+}
+
 tt {
     background: #ffffdd;
 }
