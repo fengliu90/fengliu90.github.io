@@ -3,7 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Feng Liu (he/him) -- Senior Lecturer (US Associate Professor) at The University of Melbourne</title>
+    <title>Publications | Feng Liu</title>
+    <style>
+    .summary-card { padding-top: 2em; }
+    .summary-card h3 { margin-top: 1em; }
+    </style>
 </head>
 
 <body>
@@ -23,14 +27,47 @@
 <td id="layout-content">
 
     <h1 style="margin-top: 0em">Publications</h1><br>
-	Currently, I research the trustworthy machine learning (mainly focus on transfer learning and adversarial machine learning) and two-sample testing (a fundamental problem in machine learning and statistics). Previously (2013-2016), I researched the time series prediction using neural networks. In the following, <sup>&#8224</sup> represents equal contribution, and ✉ represents corresponding author.
-    
-    <p>[<a href="#conference">Selected Conference Papers</a>,
+	<p>This page highlights representative publications from my research program on <b>statistically grounded trustworthy machine learning</b>, spanning machine learning theory, robust and reliable evaluation, foundation models, privacy and copyright protection, and AI for science. In the lists below, <sup>&#8224</sup> represents equal contribution, and ✉ represents corresponding author.</p>
+
+    <div class="highlight-box">
+    <p><b>Representative contributions</b> include theoretical and practical advances in out-of-distribution detection, adversarial robustness, data-adaptive hypothesis testing, efficient post-training, privacy leakage evaluation, and trustworthy generative AI.</p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>Statistical foundations</h3>
+        <p>Two-sample testing, independence testing, and distributional closeness testing as rigorous tools for trustworthy machine learning.</p>
+      </div>
+      <div class="summary-card">
+        <h3>Foundation models and GenAI</h3>
+        <p>Post-training, prompt learning, unlearning, provenance, privacy, and AI-generated content detection for modern generative systems.</p>
+      </div>
+      <div class="summary-card">
+        <h3>Trustworthy AI under shift</h3>
+        <p>OOD detection, open-world learning, adversarial defense, and robust representation learning for reliable deployment.</p>
+      </div>
+    </div>
+
+    <p>[<a href="#selected">Selected Works by Theme</a>,
+        <a href="#working">Working Papers</a>,
+        <a href="#conference">Selected Conference Papers</a>,
         <a href="#journal">Selected Journal Articles</a>,
         <a href="#thesis">Theses</a> ]</p>
+
+    <div>
+        <h2><hr><a name="selected"></a>Selected Works by Theme</h2>
+        <ul>
+            <li><p><b>Data-adaptive hypothesis testing and statistical foundations:</b> ICML 2020, ICML 2021, NeurIPS 2021, ICML 2022, ICLR 2025, UAI 2025, NeurIPS 2025, ICML 2026.</p></li>
+            <li><p><b>Efficient post-training and model reprogramming:</b> ICML 2024 Spotlight, ICML 2024 Oral, NeurIPS 2024 Oral, ICLR 2025, ICML 2025, CVPR 2025 Highlight, CVPR 2026 Highlight.</p></li>
+            <li><p><b>Privacy, copyright, and trustworthy generative AI:</b> KDD 2022, NeurIPS 2024, TPAMI 2025, ICML 2025, ICLR 2026, ICML 2026, and recent work on unlearning and provenance in foundation models.</p></li>
+            <li><p><b>Out-of-distribution detection and open-world reliability:</b> NeurIPS 2022 Outstanding Paper; NeurIPS 2022 Spotlight; ICLR 2024 Spotlight; ACL 2025.</p></li>
+            <li><p><b>Adversarial robustness and trustworthy evaluation:</b> ICML 2021, NeurIPS 2021, ICML 2023, ICML 2024, ICML 2025.</p></li>
+            <li><p><b>AI for science and domain applications:</b> Nature Communications, Nature Plants, and related work on scientific and high-stakes applications.</p></li>
+        </ul>
+    </div>
 	
     <div>
-        <h2><hr>Working Papers</h2>
+        <h2><hr><a name="working"></a>Working Papers</h2>
         <ol>
 			<!-- <li><p>
                 <b>F. Liu</b>, J. Lu, A. Liu and G. Zhang.<br>
@@ -59,6 +96,7 @@
                 [ <a href="https://openreview.net/pdf?id=v56b8I1tua" target="_blank">OpenReview</a> ]
                 [ <a href="https://ttu-iclr2026.github.io/" target="_blank">ICLR 2026 TTU Workshop</a> ]
                 [ <font color="green"><b> Oral </b></font> ]
+                [ <font color="green"><b> ICLR TTU Best Paper </b></font> ]
             </p></li>
             <li><p>
                 I.C. Choi, J. Zhang, <b>F. Liu</b>, Y. Song.<br>
@@ -81,16 +119,10 @@
                 [ <a href="https://arxiv.org/pdf/2506.04650" target="_blank">arXiv</a> ]
             </p></li>
             <li><p>
-                Z. Zhou, L. Peng, X. Tian, <b>F. Liu</b>.<br>
-                A Kernel Distribution Closeness Testing.<br>
-                [ <a href="https://arxiv.org/pdf/2507.12843" target="_blank">arXiv</a> ]
-            </p></li>
-            <li><p>
                 M. Li, Z. Ye, Y. Li, A. Song, G. Zhang, <b>F. Liu</b>.<br>
                 Distributional Statistics Restore Training Data Auditability in One-step Distilled Diffusion Models.<br>
                 [ <a href="https://arxiv.org/pdf/2502.02970" target="_blank">arXiv</a> ]
                 [ <a href="https://r2-fm.github.io/" target="_blank">ICML 2025 R2-FM Workshop</a> ]
-
             </p></li>
             <li><p>
                 R. Gao<sup>&#8224</sup>, <b>F. Liu</b><sup>&#8224</sup>, K. Zhou, G. Niu, B. Han and J. Cheng.<br>
@@ -104,6 +136,55 @@
     <div>
         <h2><hr><a name="conference"></a>Selected Conference Papers</h2>
         <ol>
+        <li><p>
+                H. Asadollahzadeh, <b>F. Liu</b>, C. Leckie, S. M. Erfani.<br>
+                TRACER: Persistent Regularization for Robust Multimodal Finetuning.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                Z. Zhou, L. Peng, X. Tian, <b>F. Liu</b>.<br>
+                A Kernel Distribution Closeness Testing.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://arxiv.org/pdf/2507.12843" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                X. Tian, Z. Zhou, L. Peng, <b>F. Liu</b>.<br>
+                LOTTERY: Learning from Reference-Only Samples in Two-Sample Testing under Size Asymmetry.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                B. Xu, A. Song, J. Gao, <b>F. Liu</b>.<br>
+                Once-for-All: Scalable Simultaneous Forecasting via Equilibrium State Estimation.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                P. Yang, P. Montague, <b>F. Liu</b>, A. C. Cullen, A. Kaur, C. Leckie, S. M. Erfani.<br>
+                Semantic Robustness Certification for Vision-Language Models.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                G. Hu, P. Menendez, <b>F. Liu</b>, M. Gong, G. Wang, L. Peng.<br>
+                FedReLa: Imbalanced Federated Learning via Re-Labeling.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
+        <li><p>
+                J. Yang, S. Zhang, H. Kang, <b>F. Liu</b>, Q. Chen, M. Tan.<br>
+                Zero-source LLM Hallucination Detection with Human-like Criteria Probing.<br>
+                In <a href="https://icml.cc/Conferences/2026" target="_blank"><i>International Conference on Machine Learning (ICML 2026)</i></a>, to appear.<br>
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">arXiv</a> ]
+                [ <a href="https://fengliu90.github.io/publication.html" target="_blank">CODE</a> ]
+        </p></li>
         <li><p>
                 J. Jiang, P. Yang, R. Zhang, <b>F. Liu</b>.<br>
                 Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization.<br>
